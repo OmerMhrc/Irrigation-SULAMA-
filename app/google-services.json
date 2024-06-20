@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "857503154970",
+    "firebase_url": "https://sulamam-54ca6-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "sulamam-54ca6",
+    "storage_bucket": "sulamam-54ca6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857503154970:android:84b84a5890423a17dee2a3",
+        "android_client_info": {
+          "package_name": "com.example.sulama"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARD9sGY-_8212S2W-bWUPSwU33Zxbibwk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857503154970:android:1bb36938c93904f4dee2a3",
+        "android_client_info": {
+          "package_name": "com.example.sulamasistemi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARD9sGY-_8212S2W-bWUPSwU33Zxbibwk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
