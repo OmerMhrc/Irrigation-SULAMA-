@@ -11,26 +11,26 @@
         android:id="@+id/topraknemi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
         android:text="Toprak Nemi:"
         app:layout_constraintBottom_toBottomOf="@+id/havanemi"
-        app:layout_constraintEnd_toStartOf="@+id/switch1"
-        app:layout_constraintStart_toStartOf="@+id/topraksicakligi"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/havanemi" />
 
     <TextView
         android:id="@+id/topraksicakligi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
+        android:layout_marginTop="47dp"
         android:text="Toprak Sıcaklığı:"
-        app:layout_constraintBaseline_toBaselineOf="@+id/havasicakligi"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/topraknemi"
+        app:layout_constraintTop_toBottomOf="@+id/topraknemi" />
 
     <TextView
         android:id="@+id/havanemi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="54dp"
+        android:layout_marginBottom="47dp"
         android:text="Hava Nemi:"
         app:layout_constraintBottom_toTopOf="@+id/havasicakligi"
         app:layout_constraintStart_toStartOf="@+id/havasicakligi" />
@@ -41,9 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="193dp"
         android:layout_marginEnd="69dp"
-        android:layout_marginBottom="191dp"
         android:text="Hava Sıcaklığı:"
-        app:layout_constraintBottom_toBottomOf="@+id/switch1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,20 +49,22 @@
         android:id="@+id/switch1"
         android:layout_width="wrap_content"
         android:layout_height="75dp"
-        android:layout_marginEnd="38dp"
+        android:layout_marginTop="109dp"
+        android:layout_marginBottom="108dp"
         android:scaleX="2"
         android:scaleY="2"
         android:text="Manuel mod:"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/duration"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/duration"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topraksicakligi" />
 
     <SeekBar
         android:id="@+id/seekBar3"
         android:layout_width="208dp"
         android:layout_height="53dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="18dp"
         android:background="@drawable/ic_launcher_background"
         android:backgroundTint="#FFFFFF"
         android:max="120"
@@ -80,12 +80,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="42dp"
+        android:layout_marginBottom="246dp"
         android:text="Sulama süresi:   00:00"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button"

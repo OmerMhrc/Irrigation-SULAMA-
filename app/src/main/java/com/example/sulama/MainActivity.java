@@ -67,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
                 zaman.setVisibility(TextView.INVISIBLE);
                 bt.setVisibility(Button.INVISIBLE);
                 stopCountDown(); // Geri sayımı durdur
+                sb.setProgress(0);
+                FirebaseDatabase.getInstance().getReference("su pompası/süre").setValue(0);
             }
         });
 
@@ -137,10 +139,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-                // Kullanıcı SeekBar'ı hareket ettirmeye başladığında yapılacak işlemler
-                if (cdt != null) {
-                    cdt.cancel(); // Eğer mevcut bir geri sayım varsa iptal et
-                }
             }
 
             @Override
@@ -155,7 +153,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 stopCountDown();
-                sb.setProgress(0);
             }
         });
     }
@@ -175,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
                 sb.setEnabled(true); // Geri sayım tamamlandığında SeekBar'ı tekrar etkinleştir
                 zaman.setText("Sulama süresi: 00:00"); // Geri sayım bittiğinde zamanı sıfırla
                 isCountingDown = false; // Geri sayım bittiğinde durumu güncelle
+                FirebaseDatabase.getInstance().getReference("su pompası/süre").setValue(0);
             }
         };
         cdt.start(); // Geri sayımı başlat
@@ -186,8 +184,10 @@ public class MainActivity extends AppCompatActivity {
         if (cdt != null) {
             cdt.cancel(); // Geri sayımı iptal et
             sb.setEnabled(true); // SeekBar'ı tekrar etkinleştir
-            zaman.setText("Sulama süresi: 00:00"); // Zamanı sıfırla
+            //zaman.setText("Sulama süresi: 00:00"); // Zamanı sıfırla
             isCountingDown = false; // Geri sayım durumunu güncelle
+            //sb.setProgress(0);
+            FirebaseDatabase.getInstance().getReference("su pompası/süre").setValue(0);
         }
     }
 
@@ -199,5 +199,6 @@ public class MainActivity extends AppCompatActivity {
         String second = String.format("%02d", sec);
         zaman.setText("Sulama süresi: " + minute + ":" + second);
         sb.setProgress((int) seconds);
+        FirebaseDatabase.getInstance().getReference("su pompası/süre").setValue(seconds);
     }
 }
